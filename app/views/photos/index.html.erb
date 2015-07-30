@@ -1,0 +1,13 @@
+<h1>showin all ur photos</h1>
+<!-- for some reason i need to do this or else it prints anyway -->
+<% if @photos.first %>
+  <% @photos.each do |photo| %>
+      <img src="<%= photo.image %>">
+    <p><%= link_to photo.caption, photo_path(photo) %></p>
+  <% end %>
+<% else %>
+  <p>u haven't posted any photos yet</p>
+<% end %>
+<br>
+<br>
+<%= link_to "post a new photo", new_photo_path %>

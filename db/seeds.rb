@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Photo.delete_all
+Comment.delete_all
+
+puts "Creating photos..."
+
+Photo.create public: true, caption: "firsttttt lol", image: "http://cdn.directv.com/cms3/why_directv/comcast/lg__number_one.png", user_id: User.first.id

@@ -1,1 +1,12 @@
-<h1>Welcome Index</h1>
+<h1>Showing all public photos</h1>
+
+<% if @photos.first %>
+  <% @photos.each do |photo| %>
+    <img src="<%= photo.image %>">
+    <p><%= link_to photo.caption, photo_path(photo)%></p>
+  <% end %>
+<% else %>
+  <p>There are no photos yet.</p>
+<% end %>
+
+<%= link_to "your personal photos", photos_path %>

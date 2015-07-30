@@ -1,0 +1,23 @@
+<% if @photo.errors.present? %>
+  <% @photo.errors.full_messages.each do |msg| %>
+    <p style="color: red"><b><%= msg %></b></p>
+  <% end %>
+<% end %>
+
+<%= form_for @photo, :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :image, "photo URL" %><br>
+    <%= f.text_field :image %>
+  </p>
+  <p>
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </p>
+  <p>
+    <%= f.label :public, "public?" %><br>
+    <%= f.check_box :public %> Yes
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

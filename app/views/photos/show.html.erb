@@ -1,0 +1,11 @@
+<h1>showin a photo</h1>
+<img src="<%= @photo.image %>">
+<p><%= @photo.caption %></p>
+<%= link_to "delete", photo_path(@photo), method: :delete, data: { confirm: 'Are you sure?' } %>
+<h2>Comments</h2>
+<%= render @photo.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to "back to home", photos_path %>

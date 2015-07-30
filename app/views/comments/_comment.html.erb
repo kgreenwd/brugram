@@ -1,0 +1,11 @@
+<div class="comments">
+	<p>
+	  <strong><%= User.find(comment.user_id).email %>: </strong>
+	  <%= comment.body %>
+	</p>
+</div>
+<p>
+  <%= link_to 'delete comment', [comment.photo, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
